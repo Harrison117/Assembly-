@@ -2,9 +2,12 @@
 ;   @author: Harold Umali (with Guidance from Ma'am Kedall Jeane Jaen)
 ;   @date-created: September 20 2017
 ;   @description: gets the summation of numbers 1 to N (in this example, n equals 9)
-;				using 'loop' logic (conditional jumps and concept of loops in high level PLs)
+;				using 'loop' logic (un/conditional jumps and concept of loops in high level PLs)
 ;
-;       ! USES DO-WHILE LOOP CONCEPT !
+;       ! USES DO-WHILE LOOP CONCEPT BY USING THE LOOP INSTRUCTION !
+;
+;       NOTE!!! the loop instruction uses decrement as a form of updating. Most
+;         implementations may or may not use the loop instruction
 ;
 
 section .data
@@ -21,17 +24,16 @@ section .text
 
 _start:
 
-mov byte[i], 1				; INITIALIZATION of 'loop'
+mov ecx, [N]				; INITIALIZATION of 'loop'
 
 loopBody:
-  mov al, [i]
-  add byte[sum], al
-  inc byte[i]					; UPDATE of the 'loop'
+  add byte[sum], cl
 
-	mov al, [N]
-	cmp byte[i], al			; CONDITION of the 'loop'
-	jle loopBody        ; if the condition holds, jump back to the label
-                      ; else... break from the 'loop'
+  loop loopBody     ; this statement does:
+  ; dec ecx         ; UPDATE (DECREMENT) of the 'loop'
+  ; cmp ecx, 0      ; CONDITION checking of the 'loop'
+  ; jne loopBody    ; 'loop' back to the label 'loopBody' if ecx != 0
+
 
 loopEnd:
 
