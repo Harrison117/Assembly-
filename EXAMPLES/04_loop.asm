@@ -2,7 +2,7 @@
 ;   @author: Harold Umali (with Guidance from Ma'am Kedall Jeane Jaen)
 ;   @date-created: September 20 2017
 ;   @description: gets the summation of numbers 1 to N (in this example, n equals 9)
-;				using 'loop' logic (un/conditional jumps and concept of loops in high level PLs)
+;				using 'loop' logic (conditional jumps and concept of loops in high level PLs)
 ;
 ;       ! USES FOR LOOP CONCEPT !
 
